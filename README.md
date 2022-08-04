@@ -29,7 +29,12 @@ a <|- b
 
 ---
 
+1. With PlantUML Extension\
+![ISA](https://user-images.githubusercontent.com/12408453/182765742-d56c6643-6027-4a3d-8e92-59410b5236ca.png)
+
+2. With PlantUML Previewer Extension\
 ![image](https://user-images.githubusercontent.com/12408453/182754815-88dddc94-46b5-4e65-bbd8-e3452705b2c0.png)
+
 
 ## VSCode Extensions for PlantUML
 
