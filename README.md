@@ -28,3 +28,5 @@ a <|- b
 ### Preview
 
 ---
+
+![image](https://user-images.githubusercontent.com/12408453/182754815-88dddc94-46b5-4e65-bbd8-e3452705b2c0.png)
