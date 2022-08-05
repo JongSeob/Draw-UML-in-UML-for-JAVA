@@ -1,0 +1,25 @@
+@startuml TreeMap_ClassDiagram
+class TreeMap{
+    + add(key, value)
+    + get(key)
+}
+
+class TreeMapNode{
+    + add(key, value)
+    + find(key)
+}
+
+interface Comparable <<interface>> {
+
+}
+
+object Object
+
+TreeMap -right-> "topNode" TreeMapNode
+
+TreeMapNode -up-> "2, nodes" TreeMapNode
+
+TreeMapNode -down-> "itsValue" Object
+TreeMapNode -down-> "itsKey"   Comparable
+
+@enduml

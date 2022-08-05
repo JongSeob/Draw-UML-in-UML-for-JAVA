@@ -1,0 +1,46 @@
+@startuml TreeMap_ObjectDiagram
+
+' NOTE:
+' 뒤에 as TreeMap 없이 object ":TreeMap" 만 사용하는 경우 에러 발생.
+' as를 사용하여 좌측의 문자열이 raw string임을 명시해주어야 예약어를 포함한
+' 모든 문자를 이름에 사용할 수 있다.
+' Level 0
+object ":TreeMap" as TreeMap {
+}
+' Level 1
+object ":TreeMapNode" as node0 {
+    - itsKey = "Martin"
+}
+' Level 2
+object ":TreeMapNode" as node1 {
+    - itsKey = "Bob"
+}
+object ":TreeMapNode" as node2 {
+    - itsKey = "Robin"
+}
+' Level 3
+object ":TreeMapNode" as node3 {
+    - itsKey = "Alan"
+}
+object ":TreeMapNode" as node4 {
+    - itsKey = "Don"
+}
+object ":TreeMapNode" as node5 {
+    - itsKey = "Paul"
+}
+object ":TreeMapNode" as node6 {
+    - itsKey = "Sam"
+}
+
+TreeMap -down-> "topNode" node0
+
+node0 -down-> "nodes[LESS]"    node1
+node0 -down-> "nodes[GREATER]" node2
+
+node1 -down-> "nodes[LESS]"    node3
+node1 -down-> "nodes[GREATER]" node4
+
+node2 -down-> "nodes[LESS]"    node5
+node2 -down-> "nodes[GREATER]" node6
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml TreeMap_CollaborationDiagram
+
+actor Actor
+rectangle ":TreeMap" as TreeMap
+rectangle "topNode\n:TreeMapNode" as topNode
+
+Actor   -right-> TreeMap : "1: add(key, value)\n<size:24><&arrow-right></size>"
+TreeMap -down->  topNode : "<size:24><&arrow-bottom></size>[topNode != null]\n          1.1: add(key, vaule)"
+
+'Others icons
+'<&arrow-left>
+'<&arrow-right>
+'<&arrow-top>
+'<&arrow-bottom>
+'<&loop-circular>
+@enduml

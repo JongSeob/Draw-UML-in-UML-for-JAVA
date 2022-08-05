@@ -1,0 +1,21 @@
+@startuml TreeMap_SequenceDiagram
+
+actor Actor
+participant ":TreeMap" as map
+
+Actor -> map : add(key, value)
+activate map
+
+create "topNode:\nTreeMapNode" as node
+map -> node : value key\no->     o->\n[topNode == null]
+map -> node : add(key,value)\n[topNode != null]
+note left
+두 Sequence가 한 점에서 출발하도록
+하는 것은 불가능하다
+endnote
+
+' activeate
+' deactivate
+' destroy
+
+@enduml

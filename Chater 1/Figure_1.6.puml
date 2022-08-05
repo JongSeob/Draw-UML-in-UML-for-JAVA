@@ -1,0 +1,18 @@
+@startuml Subway_Entrance_State_Machine
+
+state Locked
+state Unlocked
+
+note left of Locked
+event / Method
+ex)
+coin / Unlock
+pass / Lock
+endnote
+
+Locked   -> Locked        : pass / Alarm
+Locked   -down-> Unlocked : coin / Unlock
+Unlocked -> Unlocked      : coin / Thankyou
+Unlocked -up-> Locked     : pass / Lock
+
+@enduml
