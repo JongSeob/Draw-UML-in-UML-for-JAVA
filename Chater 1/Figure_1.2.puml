@@ -1,4 +1,5 @@
-@startuml TreeMap_ClassDiagram
+@startuml Figure_1.2
+' TreeMap_ClassDiagram
 class TreeMap{
     + add(key, value)
     + get(key)

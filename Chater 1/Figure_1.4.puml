@@ -1,12 +1,13 @@
-@startuml TreeMap_SequenceDiagram
+@startuml Figure_1.4
+' TreeMap_SequenceDiagram
 
 actor Actor
-participant ":TreeMap" as map
+participant "<u>:TreeMap</u>" as map
 
 Actor -> map : add(key, value)
 activate map
 
-create "topNode:\nTreeMapNode" as node
+create "<u>topNode:</u>\n<u>TreeMapNode</u>" as node
 map -> node : value key\no->     o->\n[topNode == null]
 map -> node : add(key,value)\n[topNode != null]
 note left

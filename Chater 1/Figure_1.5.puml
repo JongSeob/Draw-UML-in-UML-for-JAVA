@@ -1,8 +1,9 @@
-@startuml TreeMap_CollaborationDiagram
+@startuml Figure_1.5
+' TreeMap_CollaborationDiagram
 
 actor Actor
-rectangle ":TreeMap" as TreeMap
-rectangle "topNode\n:TreeMapNode" as topNode
+rectangle "<u>:TreeMap</u>" as TreeMap
+rectangle "<u>topNode</u>\n<u>:TreeMapNode</u>" as topNode
 
 Actor   -right-> TreeMap : "1: add(key, value)\n<size:24><&arrow-right></size>"
 TreeMap -down->  topNode : "<size:24><&arrow-bottom></size>[topNode != null]\n          1.1: add(key, vaule)"

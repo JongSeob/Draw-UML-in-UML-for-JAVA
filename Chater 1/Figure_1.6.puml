@@ -1,4 +1,5 @@
-@startuml Subway_Entrance_State_Machine
+@startuml Figure_1.6
+' Subway_Entrance_State_Machine
 
 state Locked
 state Unlocked
