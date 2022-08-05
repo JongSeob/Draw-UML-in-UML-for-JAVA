@@ -1,0 +1,18 @@
+@startuml Figure2.6
+
+skinparam Linetype ortho
+
+rectangle "<u>send : Button</u>" as SendButton
+rectangle "<u>: Button</u>" as Button
+rectangle "<u>: Dialer</u>" as Dialer
+rectangle "<u>: Screen</u>" as Screen
+rectangle "<u>: Speaker</u>" as Speaker
+rectangle "<u>: Radio</u>" as Radio
+
+Button     --> Dialer  : "1* : digit(n)\n<size:24><&arrow-bottom></size>"
+Dialer     --> Screen  : "\t1.1 : displayDigit(n)\n<size:24><&arrow-bottom></size>\n"
+Dialer     --> Speaker : "1.2 : tone(n)\n<size:24><&arrow-bottom></size>"
+SendButton --> Dialer  : "2 : Send\n<size:24><&arrow-bottom></size>"
+Dialer     --> Radio   : "2.1 : connect(pno)"
+Radio      --> Screen  : "A1 : in Use"
+@enduml

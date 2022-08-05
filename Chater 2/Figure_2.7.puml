@@ -1,0 +1,15 @@
+@startuml Figure_2.7
+
+class Button
+class Dialer
+class Radio
+class Screen
+class Speaker
+
+Button -right-> Dialer
+Dialer -right-> Radio
+Dialer -down->  Speaker
+Dialer -down->  Screen
+Radio  -down->  Screen
+
+@enduml

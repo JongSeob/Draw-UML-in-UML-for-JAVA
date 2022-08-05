@@ -1,0 +1,24 @@
+@startuml Figure_2.1
+
+class "User Database"{
+    + getUser()
+}
+
+class "Login Servlet" {
+    + processRequest()
+}
+
+interface Servlet <<interface>> {
+
+}
+
+class HTTPRequest
+class HTTPResponse
+
+Servlet <|-down- "Login Servlet"
+"User Database" <-right- "Login Servlet"
+
+Servlet -right-> HTTPRequest
+(Servlet, HTTPRequest) -right-> HTTPResponse
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml Figure_2.10
+
+skinparam Linetype ortho
+
+rectangle "<u>: Button</u>" as Button
+rectangle "<u>: SendButton</u>\n<u>DialerAdapter</u>" as SendButtonDialerAdapter
+rectangle "<u>: ButtonDialer</u>\n<u>Adapter</u>" as ButtonDialerAdapter
+rectangle "<u>: Dialer</u>" as Dialer
+rectangle "<u>: Screen</u>" as Screen
+rectangle "<u>: Speaker</u>" as Speaker
+rectangle "<u>: Radio</u>" as Radio
+
+circle "ButtonListener" as ButtonListener0
+circle "ButtonListener" as ButtonListener1
+ButtonListener0 - SendButtonDialerAdapter
+ButtonListener1 - ButtonDialerAdapter
+
+Button --> ButtonListener0 : 2:buttonPressed<size:18><&arrow-top></size>
+Button --> ButtonListener1 : 1*:buttonPressed<size:18><&arrow-bottom></size>
+
+SendButtonDialerAdapter --> Dialer
+ButtonDialerAdapter     --> Dialer
+
+Dialer --> Screen  : "1.1 : displayDigit(n)\n<size:18><&arrow-bottom></size>\n\n\n"
+Dialer --> Speaker : "1.2 : tone(n)\n<size:18><&arrow-bottom></size>"
+Dialer --> Radio   : "2.1 : connect(pno)\n<size:18><&arrow-bottom></size>"
+Radio  --> Screen  : "A1 : in Use\n<size:18><&arrow-bottom></size>"
+@enduml

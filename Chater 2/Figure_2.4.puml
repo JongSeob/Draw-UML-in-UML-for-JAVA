@@ -1,0 +1,39 @@
+@startuml Figure_2.4
+
+' Line을 모두 직각으로 그린다.
+skinparam linetype ortho
+
+class "Geometric Object"
+class "Point"
+class "LinearObject"
+class "Ray"
+class "InifiniteLine"
+class "Line"
+class "PolyLine"
+
+"Geometric Object" <|-down- "LinearObject"
+"Geometric Object" <|-down- "Point"
+"Point" "2" <-right- "LinearObject"
+"LinearObject" <|-down- "Ray"
+"LinearObject" <|-down- "InifiniteLine"
+"LinearObject" <|-down- "Line"
+"PolyLine" -down-> "*" "Line"
+
+class "Space"
+class "Portal"
+class "Authored Space"
+class "Human Portal"
+class "Window"
+class "Door"
+class "WallOpening"
+
+"PolyLine" "itsOutline" <-right- "Space"
+"Space" -right-> "Authored Space"
+"Space" -down-> "Portal"
+"Portal" -up-> "2" "Space"
+"Portal" <|-down- "Human Portal"
+"Portal" <|-down- "Window"
+"Human Portal" <|-down- "Door"
+"Human Portal" <|-down- "WallOpening"
+
+@enduml

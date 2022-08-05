@@ -1,0 +1,41 @@
+@startuml Figure_2.9
+
+class Button
+class Dialer {
+    + digit(n)
+}
+class Radio
+class Screen
+class Speaker
+
+interface ButtonListener <<interface>> {
+    + buttonPressed()
+}
+
+class ButtonDialerAdapter {
+    - digit
+}
+
+ButtonListener <|-down- ButtonDialerAdapter
+
+Button -right-> ButtonListener
+ButtonDialerAdapter -> Dialer
+Dialer -right-> Radio
+Dialer -down->  Speaker
+Dialer -down->  Screen
+Radio  -down->  Screen
+
+note right of ButtonListener::buttonPressed()
+Button Class에 의해 호출
+endnote
+
+note left of ButtonDialerAdapter::digit
+Pressed된 Button의 번호
+endnote
+
+note bottom of ButtonDialerAdapter
+Adpater가 Button Class 대신 Dialer::digit(n)
+함수를 호출해준다.
+endnote
+
+@enduml
