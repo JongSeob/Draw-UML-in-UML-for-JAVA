@@ -2,13 +2,13 @@
 
 skinparam Linetype ortho
 
-rectangle "<u>: Button</u>" as Button
-rectangle "<u>: SendButton</u>\n<u>DialerAdapter</u>" as SendButtonDialerAdapter
-rectangle "<u>: ButtonDialer</u>\n<u>Adapter</u>" as ButtonDialerAdapter
-rectangle "<u>: Dialer</u>" as Dialer
-rectangle "<u>: Screen</u>" as Screen
-rectangle "<u>: Speaker</u>" as Speaker
-rectangle "<u>: Radio</u>" as Radio
+collections "<u>: Button</u>" as Button
+collections "<u>: ButtonDialer</u>\n<u>Adapter</u>" as ButtonDialerAdapter
+rectangle   "<u>: SendButton</u>\n<u>DialerAdapter</u>" as SendButtonDialerAdapter
+rectangle   "<u>: Dialer</u>" as Dialer
+rectangle   "<u>: Screen</u>" as Screen
+rectangle   "<u>: Speaker</u>" as Speaker
+rectangle   "<u>: Radio</u>" as Radio
 
 circle "ButtonListener" as ButtonListener0
 circle "ButtonListener" as ButtonListener1
