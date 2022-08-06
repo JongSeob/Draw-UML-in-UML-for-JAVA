@@ -1,0 +1,18 @@
+@startuml Figure_4.1
+' 전형적인 시퀀스 다이어그램
+skinparam ResponseMessageBelowArrow True
+
+actor Actor
+participant "<u>: LoginServlet</u>" as LoginServlet
+participant "<u>e:Employee</u>" as Employee
+participant "<b>EmployeeDB</b>" as EmployeeDB
+
+Actor -> LoginServlet : \tlogin\no->\t\to->\nempid\tpassword
+activate LoginServlet
+
+LoginServlet -> EmployeeDB : e := getEmployee(empid)
+LoginServlet -> Employee : validate(password)
+
+return <-o\n:HTTPResponse
+
+@enduml

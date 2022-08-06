@@ -1,0 +1,16 @@
+@startuml Figure_4.4
+' 단순한 반복
+
+participant ": Payroll" as Payroll
+participant ": PayrollDB" as PayrollDB
+participant "e:Empolyee" as Employee
+
+Payroll -> PayrollDB : getEmployeeList
+
+loop foreach id in idList
+Payroll -> PayrollDB : getEmployee(id)
+
+Payroll -> Employee : pay
+end
+
+@enduml

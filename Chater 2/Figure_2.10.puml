@@ -1,6 +1,7 @@
 @startuml Figure_2.10
 
-skinparam Linetype ortho
+skinparam Linetype polyline
+'skinparam Linetype ortho
 
 collections "<u>: Button</u>" as Button
 collections "<u>: ButtonDialer</u>\n<u>Adapter</u>" as ButtonDialerAdapter
@@ -12,8 +13,8 @@ rectangle   "<u>: Radio</u>" as Radio
 
 circle "ButtonListener" as ButtonListener0
 circle "ButtonListener" as ButtonListener1
-ButtonListener0 - SendButtonDialerAdapter
-ButtonListener1 - ButtonDialerAdapter
+ButtonListener0 -d- SendButtonDialerAdapter
+ButtonListener1 -d- ButtonDialerAdapter
 
 Button --> ButtonListener0 : 2:buttonPressed<size:18><&arrow-top></size>
 Button --> ButtonListener1 : 1*:buttonPressed<size:18><&arrow-bottom></size>

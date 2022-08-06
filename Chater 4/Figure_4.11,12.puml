@@ -1,0 +1,22 @@
+@startuml Figure_4.11,12
+
+actor Actor
+participant "<u>logger:Log</u>" as logger
+
+Actor -> logger
+note right
+Synchronous Message
+endnote
+
+Actor ->> logger
+note right
+Asynchronous Message
+endnote
+
+Actor -\\ logger
+note right
+[Old] Asynchronous Message
+It's old but recommended by Uncle Bob due to readability
+endnote
+
+@enduml
