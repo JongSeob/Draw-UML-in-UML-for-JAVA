@@ -1,0 +1,10 @@
+@startuml Figure_8.2
+
+folder "com.objectmentor.website.\nconsultantScheduler" {
+    label "+ LoginServlet \
+         \n+ MainMenuServlet \
+         \n+ MonthlyCalendarSservlet \
+         \n+ WeeklyCalendarServlet"
+}
+
+@enduml
