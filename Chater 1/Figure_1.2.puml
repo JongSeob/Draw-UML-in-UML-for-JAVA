@@ -16,11 +16,13 @@ interface Comparable <<interface>> {
 
 object Object
 
-TreeMap -right-> "topNode" TreeMapNode
+' ->  : horizontal
+' --> : vertical
+TreeMap -> "topNode" TreeMapNode
 
-TreeMapNode -up-> "2, nodes" TreeMapNode
+TreeMapNode --> "2, nodes" TreeMapNode
 
-TreeMapNode -down-> "itsValue" Object
-TreeMapNode -down-> "itsKey"   Comparable
+TreeMapNode --> "itsValue" Object
+TreeMapNode --> "itsKey"   Comparable
 
 @enduml

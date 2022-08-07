@@ -1,0 +1,10 @@
+@startuml
+folder com
+folder objectmentor
+folder Website
+folder consultantScheduler
+
+com          +-> objectmentor
+objectmentor +-> Website
+Website      +-> consultantScheduler
+@enduml

@@ -1,7 +1,10 @@
 @startuml Figure_2.4
 
 ' Line을 모두 직각으로 그린다.
-skinparam linetype ortho
+'skinparam linetype ortho
+skinparam linetype PolyLine
+skinparam groupinheritance 2
+
 
 class "Geometric Object"
 class "Point"
@@ -11,13 +14,13 @@ class "InifiniteLine"
 class "Line"
 class "PolyLine"
 
-"Geometric Object" <|-down- "LinearObject"
-"Geometric Object" <|-down- "Point"
-"Point" "2" <-right- "LinearObject"
-"LinearObject" <|-down- "Ray"
-"LinearObject" <|-down- "InifiniteLine"
-"LinearObject" <|-down- "Line"
-"PolyLine" -down-> "*" "Line"
+"Geometric Object" <|-- "LinearObject"
+"Geometric Object" <|-- "Point"
+"Point" "2" <- "LinearObject"
+"LinearObject" <|-- "Ray"
+"LinearObject" <|-- "InifiniteLine"
+"LinearObject" <|-- "Line"
+"PolyLine" --> "*" "Line"
 
 class "Space"
 class "Portal"
@@ -27,13 +30,13 @@ class "Window"
 class "Door"
 class "WallOpening"
 
-"PolyLine" "itsOutline" <-right- "Space"
-"Space" -right-> "Authored Space"
-"Space" -down-> "Portal"
-"Portal" -up-> "2" "Space"
-"Portal" <|-down- "Human Portal"
-"Portal" <|-down- "Window"
-"Human Portal" <|-down- "Door"
-"Human Portal" <|-down- "WallOpening"
+"PolyLine" "itsOutline" <- "Space"
+"Space" -> "Authored Space"
+"Space" --> "Portal"
+"Space" "2" <-- "Portal"
+"Portal" <|-- "Human Portal"
+"Portal" <|-- "Window"
+"Human Portal" <|-- "Door"
+"Human Portal" <|-- "WallOpening"
 
 @enduml

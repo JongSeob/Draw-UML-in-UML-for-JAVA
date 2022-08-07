@@ -16,14 +16,14 @@ class ButtonDialerAdapter {
     - digit
 }
 
-ButtonListener <|-down- ButtonDialerAdapter
+ButtonListener <|-- ButtonDialerAdapter
 
-Button -right-> ButtonListener
+Button -> ButtonListener
 ButtonDialerAdapter -> Dialer
-Dialer -right-> Radio
-Dialer -down->  Speaker
-Dialer -down->  Screen
-Radio  -down->  Screen
+Dialer -> Radio
+Dialer -->  Speaker
+Dialer -->  Screen
+Radio  -->  Screen
 
 note right of ButtonListener::buttonPressed()
 Button Class에 의해 호출

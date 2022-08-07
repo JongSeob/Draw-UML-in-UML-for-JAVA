@@ -1,5 +1,5 @@
 @startuml Figure_2.10
-
+left to right direction
 skinparam Linetype polyline
 'skinparam Linetype ortho
 
@@ -13,17 +13,17 @@ rectangle   "<u>: Radio</u>" as Radio
 
 circle "ButtonListener" as ButtonListener0
 circle "ButtonListener" as ButtonListener1
-ButtonListener0 -d- SendButtonDialerAdapter
-ButtonListener1 -d- ButtonDialerAdapter
+ButtonListener0 -- SendButtonDialerAdapter
+ButtonListener1 -- ButtonDialerAdapter
 
-Button --> ButtonListener0 : 2:buttonPressed<size:18><&arrow-top></size>
-Button --> ButtonListener1 : 1*:buttonPressed<size:18><&arrow-bottom></size>
+Button --> ButtonListener0 : 2:buttonPressed<size:18><&arrow-right></size>
+Button --> ButtonListener1 : 1*:buttonPressed<size:18><&arrow-right></size>
 
 SendButtonDialerAdapter --> Dialer
 ButtonDialerAdapter     --> Dialer
 
-Dialer --> Screen  : "1.1 : displayDigit(n)\n<size:18><&arrow-bottom></size>\n\n\n"
-Dialer --> Speaker : "1.2 : tone(n)\n<size:18><&arrow-bottom></size>"
-Dialer --> Radio   : "2.1 : connect(pno)\n<size:18><&arrow-bottom></size>"
-Radio  --> Screen  : "A1 : in Use\n<size:18><&arrow-bottom></size>"
+Dialer --> Screen  : "1.1 : displayDigit(n)\n<size:18><&arrow-right></size>"
+Dialer --> Speaker : "1.2 : tone(n)\n<size:18><&arrow-right></size>"
+Dialer --> Radio   : "2.1 : connect(pno)\n<size:18><&arrow-right></size>"
+Radio  --> Screen  : "A1 : in Use\n<size:18><&arrow-right></size>"
 @enduml

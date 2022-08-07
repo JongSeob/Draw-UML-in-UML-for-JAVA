@@ -23,28 +23,30 @@ object "<u>:TreeMapNode</u>" as node2 {
     - itsKey = "Robin"
 }
 ' Level 3
-object "<u>:TreeMapNode</u>" as node3 {
+' HTML 스타일: <u></u>, <b></b> 외에
+' creole 스타일: __, ** 등도 사용 가능하다
+object "__:TreeMapNode__" as node3 {
     - itsKey = "Alan"
 }
-object "<u>:TreeMapNode</u>" as node4 {
+object "__:TreeMapNode__" as node4 {
     - itsKey = "Don"
 }
-object "<u>:TreeMapNode</u>" as node5 {
+object "__:TreeMapNode__" as node5 {
     - itsKey = "Paul"
 }
-object "<u>:TreeMapNode</u>" as node6 {
+object "__:TreeMapNode__" as node6 {
     - itsKey = "Sam"
 }
 
-TreeMap -down-> "topNode" node0
+TreeMap --> "topNode" node0
 
-node0 -down-> "nodes[LESS]"    node1
-node0 -down-> "nodes[GREATER]" node2
+node0 --> "nodes[LESS]"    node1
+node0 --> "nodes[GREATER]" node2
 
-node1 -down-> "nodes[LESS]"    node3
-node1 -down-> "nodes[GREATER]" node4
+node1 --> "nodes[LESS]"    node3
+node1 --> "nodes[GREATER]" node4
 
-node2 -down-> "nodes[LESS]"    node5
-node2 -down-> "nodes[GREATER]" node6
+node2 --> "nodes[LESS]"    node5
+node2 --> "nodes[GREATER]" node6
 
 @enduml

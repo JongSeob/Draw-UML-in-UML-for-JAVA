@@ -6,10 +6,10 @@ class Radio
 class Screen
 class Speaker
 
-Button -right-> Dialer
-Dialer -right-> Radio
-Dialer -down->  Speaker
-Dialer -down->  Screen
-Radio  -down->  Screen
+Button -> Dialer
+Dialer -> Radio
+Dialer -->  Speaker
+Dialer -->  Screen
+Radio  -->  Screen
 
 @enduml

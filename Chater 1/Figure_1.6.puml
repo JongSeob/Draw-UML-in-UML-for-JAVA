@@ -11,9 +11,9 @@ coin / Unlock
 pass / Lock
 endnote
 
-Locked   -> Locked        : pass / Alarm
-Locked   -down-> Unlocked : coin / Unlock
-Unlocked -> Unlocked      : coin / Thankyou
-Unlocked -up-> Locked     : pass / Lock
+Locked   -> Locked    : pass / Alarm
+Locked   --> Unlocked : coin / Unlock
+Unlocked -> Unlocked  : coin / Thankyou
+Unlocked --> Locked   : pass / Lock
 
 @enduml

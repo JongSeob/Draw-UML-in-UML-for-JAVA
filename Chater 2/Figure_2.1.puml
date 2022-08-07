@@ -15,10 +15,10 @@ interface Servlet <<interface>> {
 class HTTPRequest
 class HTTPResponse
 
-Servlet <|-down- "Login Servlet"
-"User Database" <-right- "Login Servlet"
+Servlet <|-- "Login Servlet"
+"User Database" <- "Login Servlet"
 
-Servlet -right-> HTTPRequest
-(Servlet, HTTPRequest) -right-> HTTPResponse
+Servlet -> HTTPRequest
+(Servlet, HTTPRequest) --> HTTPResponse
 
 @enduml
