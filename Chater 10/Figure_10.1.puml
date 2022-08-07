@@ -1,0 +1,41 @@
+@startuml Figure_10.1
+
+state "Prompting for Login" as loginPrompt
+loginPrompt : entry / showLoginScreen
+loginPrompt : exit / hideLoginScreen
+
+state ValidatingUser
+state ValidUser
+state "Login Failed" as loginFailed
+loginFailed : entry / showLoginFailureScreen
+loginFailed : exit / hideLoginFailureScreen
+state "Sending Password" as sendPassword
+sendPassword : entry / sendPassword
+
+state "Sending Password Result" as sendResult {
+    state "Sending Password Failed" as sendPasswordFailed
+    sendPasswordFailed : entry / showSendFailureScreen
+    sendPasswordFailed : exit / hideSendFailureScreen
+    state "Sending Password Succeeded" as sendPasswordSucceeded
+    sendPasswordSucceeded : entry / showSendSuccessScreen
+    sendPasswordSucceeded : exit / hideSendSuccessScreen
+}
+
+[*] -> loginPrompt
+loginPrompt --> ValidatingUser : login / validateUser
+ValidatingUser --> ValidUser : valid
+loginPrompt <-- ValidUser : logout
+
+ValidatingUser -> loginFailed : failed
+
+loginPrompt -> sendPassword : forgotPassword
+
+loginPrompt  <-- loginFailed : retry
+sendPassword <-- loginFailed : forgotPassword
+
+sendPassword --> sendPasswordFailed : failed
+sendPassword --> sendPasswordSucceeded : sent
+
+loginPrompt <-- sendResult : OK
+
+@enduml
