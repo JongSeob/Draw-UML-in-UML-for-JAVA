@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+
+object "firstFloor : Floor" as firstFloor
+object "kitchen : Space" as kitchen
+object ": WallOpening" as WallOpening
+object "lunchRoom : Space" as lunchRoom
+
+firstFloor --> kitchen
+firstFloor --> lunchRoom
+
+kitchen -> WallOpening
+kitchen <- WallOpening
+WallOpening <- lunchRoom
+WallOpening -> lunchRoom
+
+object ": window" as window0
+object ": window" as window1
+object "outside : Space" as outside
+
+kitchen   --> window0
+lunchRoom --> window1
+
+window0 -> outside
+outside <- window1
+
+object ": Door" as Door
+
+lunchRoom -> Door
+lunchRoom <- Door
+
+Door --> outside
+Door "opensInto" --> outside
+@enduml
