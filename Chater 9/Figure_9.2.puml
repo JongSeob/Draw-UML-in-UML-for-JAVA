@@ -1,10 +1,10 @@
 @startuml
 left to right direction
 
-object "firstFloor : Floor" as firstFloor
-object "kitchen : Space" as kitchen
-object ": WallOpening" as WallOpening
-object "lunchRoom : Space" as lunchRoom
+object "__firstFloor : Floor__" as firstFloor
+object "__kitchen : Space__" as kitchen
+object "__: WallOpening__" as WallOpening
+object "__lunchRoom : Space__" as lunchRoom
 
 firstFloor --> kitchen
 firstFloor --> lunchRoom
@@ -14,9 +14,9 @@ kitchen <- WallOpening
 WallOpening <- lunchRoom
 WallOpening -> lunchRoom
 
-object ": window" as window0
-object ": window" as window1
-object "outside : Space" as outside
+object "__: window__" as window0
+object "__: window__" as window1
+object "__outside : Space__" as outside
 
 kitchen   --> window0
 lunchRoom --> window1
@@ -24,7 +24,7 @@ lunchRoom --> window1
 window0 -> outside
 outside <- window1
 
-object ": Door" as Door
+object "__: Door__" as Door
 
 lunchRoom -> Door
 lunchRoom <- Door
