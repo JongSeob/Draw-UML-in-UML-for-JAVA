@@ -1,0 +1,31 @@
+@startuml Figure_11.13
+
+note top of "abstract classes"
+abstract class들은 concrete class에 의존하지 않고,
+abstract class들 끼리 서로 의존함에 주목.
+DIP(Dependency Inversion Principle)
+endnote
+rectangle "abstract classes" {
+    abstract class "User Interface"     as userInterface
+    abstract class "Hot Water Source"   as hotWaterSource
+    abstract class "Containment Vessel" as containmentContainer
+}
+
+class M4UserInterface
+class M4ContainmentVessel
+class M4HotWaterSource
+
+interface Pollable <<interface>>
+
+userInterface -> hotWaterSource
+userInterface --> containmentContainer
+hotWaterSource --> containmentContainer
+
+userInterface         <|-- M4UserInterface
+hotWaterSource        <|-- M4ContainmentVessel
+containmentContainer  <|-- M4HotWaterSource
+
+M4UserInterface     ..|> Pollable
+M4ContainmentVessel ..|> Pollable
+M4HotWaterSource    ..|> Pollable
+@enduml
