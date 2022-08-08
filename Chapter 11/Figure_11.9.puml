@@ -1,0 +1,9 @@
+@startuml Figure_11.9
+class "User\nInterface" as UserInterface
+class "HotWater\nSource" as HotWaterSource
+class "Containment\nVessel" as ContainmentVessel
+
+UserInterface  <-> HotWaterSource
+UserInterface  <--> ContainmentVessel
+HotWaterSource <--> ContainmentVessel
+@enduml

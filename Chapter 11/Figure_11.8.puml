@@ -1,0 +1,9 @@
+@startuml Figure_11.8
+object "__User__\n__Interface__" as UserInterface
+object "__HotWater__\n__Source__" as HotWaterSource
+object "__Containment__\n__Vessel__" as ContainmentVessel
+
+UserInterface <-> HotWaterSource : 1a:IsReady<&arrow-right>\n3a:Start<&arrow-right>
+UserInterface "1e: Complete<&arrow-top>\n2d: Done<&arrow-top>" <--> "2a:IsReady<&arrow-bottom>\n4a:Start<&arrow-bottom>" ContainmentVessel
+HotWaterSource "1c: Done<&arrow-bottom>" <--> "1d: Done<&arrow-top>" ContainmentVessel : <&arrow-top>1b: Pause\n<&arrow-top>2b: Resume
+@enduml
