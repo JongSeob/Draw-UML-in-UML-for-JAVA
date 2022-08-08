@@ -1,0 +1,32 @@
+@startuml Figure_11.1
+class Button
+class Light
+class CoffeeMaker
+
+class Boiler
+class WarmerPlate
+
+class Sensor
+class PlateSensor
+class BoilerSensor
+
+class Heater
+class PlateHeater
+class BoilerHeater
+
+Button <--* CoffeeMaker
+Light  <--* CoffeeMaker
+
+CoffeeMaker *--> WarmerPlate
+CoffeeMaker *--> Boiler
+
+WarmerPlate *-->  PlateHeater
+Boiler      *-->  BoilerHeater
+WarmerPlate *-->  PlateSensor
+Boiler      *-->  BoilerSensor
+
+PlateHeater  --|> Heater
+BoilerHeater --|> Heater
+PlateSensor  --|> Sensor
+BoilerSensor --|> Sensor
+@enduml

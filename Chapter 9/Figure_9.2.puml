@@ -1,4 +1,4 @@
-@startuml
+@startuml Figure_9.2
 left to right direction
 
 object "__firstFloor : Floor__" as firstFloor
